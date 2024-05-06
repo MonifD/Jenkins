@@ -1,11 +1,13 @@
 from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(options=chrome_options)
+firefox_options = Options()
+gecko_driver_path = "../geckodriver"
+firefox_options.binary_location = gecko_driver_path
+driver = webdriver.Firefox(options=firefox_options)
+
 
 driver.get("https://www.amazon.fr")
 

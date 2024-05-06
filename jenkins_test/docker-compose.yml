@@ -1,7 +1,9 @@
 version: '2'
 services:
   jenkins:
-    image: 'jenkins/jenkins'
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: "jenkins"
     labels:
       kompose.service.type: nodeport
